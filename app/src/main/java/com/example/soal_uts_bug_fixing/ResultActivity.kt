@@ -19,15 +19,18 @@ class ResultActivity : AppCompatActivity() {
 
         val tipe = intent.getStringExtra(AppointmentActivity.EXTRA_TIPE)
         val alamat = intent.getStringExtra(AppointmentActivity.EXTRA_ALAMAT)
-        val gender = intent.getStringExtra(AppointmentActivity.EXTRA_TANGGAL)
+        val gender = intent.getStringExtra(AppointmentActivity.EXTRA_GENDER)
         val waktu = intent.getStringExtra(AppointmentActivity.EXTRA_WAKTU)
+        val tanggal = intent.getStringExtra(AppointmentActivity.EXTRA_TANGGAL)
         val nama = intent.getStringExtra(AppointmentActivity.EXTRA_NAME)
-        val identitas = intent.getStringExtra(AppointmentActivity.EXTRA_WAKTU)
+        val identitas = intent.getStringExtra(AppointmentActivity.EXTRA_IDENTITAS)
 
 
         with(binding){
             namaTxt.text = nama
             identitasTxt.text = identitas
+            waktuTxt.text = waktu
+            tanggalTxt.text = tanggal
             genderTxt.text = gender
             tipeTxt.text = tipe
             if(tipe=="Offline"){

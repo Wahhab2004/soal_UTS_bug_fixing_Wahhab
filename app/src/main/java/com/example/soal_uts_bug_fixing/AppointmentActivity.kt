@@ -39,6 +39,7 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
         const val EXTRA_WAKTU = "extra_waktu"
         const val EXTRA_NAME = "extra_name"
         const val EXTRA_GENDER = "extra_gender"
+        const val EXTRA_IDENTITAS = "extra_identitas"
     }
 
     private lateinit var dateInput : String
@@ -126,10 +127,9 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
                 intentToResult.putExtra(EXTRA_TANGGAL, binding.kalenderTxt.text.toString())
                 intentToResult.putExtra(EXTRA_WAKTU, binding.timerTxt.text.toString())
                 intentToResult.putExtra(EXTRA_TIPE, tipePertemuan)
-                // ini dibenerin
-                intentToResult.putExtra(FormActivity.EXTRA_NAMA, nama)
-                intentToResult.putExtra(FormActivity.EXTRA_IDENTITAS, identitas)
-                intentToResult.putExtra(FormActivity.EXTRA_GENDER, gender)
+                intentToResult.putExtra(EXTRA_NAME, nama)
+                intentToResult.putExtra(EXTRA_IDENTITAS, identitas)
+                intentToResult.putExtra(EXTRA_GENDER, gender)
 
                 if(tipePertemuan=="Offline"){
                     intentToResult.putExtra(EXTRA_ALAMAT, binding.lokasiEdt.text.toString())
@@ -140,7 +140,7 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
 
     fun fieldNotEmpty(): Boolean {
         with(binding){
-            if(kontakEdt.text.toString()!="" && tipePertemuan!="" && timeInput!="" && dateInput!=""){
+            if(kontakEdt.text.toString()!="" && tipePertemuan!="" && timerTxt.text!="" && kalenderTxt.text!=""){
                 if(tipePertemuan=="Offline"){
                     if(lokasiEdt.text.toString()!=""){
                         return true
