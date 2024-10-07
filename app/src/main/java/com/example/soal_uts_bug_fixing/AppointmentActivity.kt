@@ -92,6 +92,7 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
                 }
             }
 
+
         }
 
     }
@@ -102,7 +103,6 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
         val selectedDate = "$year/${month + 1}/$day"
         Toast.makeText(this@AppointmentActivity, selectedDate,
             Toast.LENGTH_SHORT).show()
-
         binding.kalenderTxt.text = selectedDate
 
     }
@@ -126,7 +126,7 @@ class AppointmentActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListe
                 intentToResult.putExtra(EXTRA_TANGGAL, binding.kalenderTxt.text.toString())
                 intentToResult.putExtra(EXTRA_WAKTU, binding.timerTxt.text.toString())
                 intentToResult.putExtra(EXTRA_TIPE, tipePertemuan)
-// ini dibenerin
+                // ini dibenerin
                 intentToResult.putExtra(FormActivity.EXTRA_NAMA, nama)
                 intentToResult.putExtra(FormActivity.EXTRA_IDENTITAS, identitas)
                 intentToResult.putExtra(FormActivity.EXTRA_GENDER, gender)
